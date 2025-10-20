@@ -8,8 +8,12 @@ class CheckoutPage extends BasePage {
     // Locators
     this.locators = {
       checkoutTitle: '//android.widget.TextView[@text="Checkout"]',
+      firstNameField: '//android.widget.EditText[@resource-id="first_name"]',
+      lastNameField: '//android.widget.EditText[@resource-id="last_name"]',
+      emailField: '//android.widget.EditText[@resource-id="email"]',
       shippingAddressField: '//android.widget.EditText[@resource-id="shipping_address"]',
       cityField: '//android.widget.EditText[@resource-id="city"]',
+      stateField: '//android.widget.EditText[@resource-id="state"]',
       zipCodeField: '//android.widget.EditText[@resource-id="zip_code"]',
       countryField: '//android.widget.EditText[@resource-id="country"]',
       cardNumberField: '//android.widget.EditText[@resource-id="card_number"]',
