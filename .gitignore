@@ -1,0 +1,159 @@
+# ========================================
+# Environment and Secrets
+# ========================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+# ========================================
+# Node.js Dependencies
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnpm-debug.log*
+
+# ========================================
+# Test Results and Reports
+# ========================================
+test-results/
+test-output/
+allure-results/
+allure-report/
+mochawesome-report/
+*.html
+*.json
+!package.json
+!cucumber.config.js
+cucumber-report.html
+cucumber-report.json
+
+# ========================================
+# Screenshots and Videos
+# ========================================
+screenshots/*.png
+screenshots/*.jpg
+videos/
+*.mp4
+*.avi
+
+# ========================================
+# Logs
+# ========================================
+logs/
+*.log
+npm-debug.log*
+combined.log
+error.log
+appium.log
+
+# ========================================
+# Operating System Files
+# ========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ========================================
+# IDE and Editor Files
+# ========================================
+# JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ========================================
+# Appium Specific
+# ========================================
+.appium/
+appium.log
+npm-shrinkwrap.json
+
+# Android
+*.apk
+*.aab
+build/
+.gradle/
+local.properties
+
+# iOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+DerivedData/
+*.xcuserstate
+*.xcworkspace
+
+# ========================================
+# Coverage and Testing
+# ========================================
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+
+# ========================================
+# Temporary Files
+# ========================================
+tmp/
+temp/
+*.tmp
+*.cache
+.cache/
+
+# ========================================
+# Build Output
+# ========================================
+dist/
+build/
+out/
+
+# ========================================
+# Miscellaneous
+# ========================================
+*.bak
+*.old
+*.orig
+*.rej
+*.diff
+*.patch
+

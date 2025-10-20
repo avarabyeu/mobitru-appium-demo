@@ -1,0 +1,50 @@
+{
+  "name": "elitea-mobitru-demo",
+  "version": "1.0.0",
+  "description": "Appium test automation framework with BDD support for local and remote execution",
+  "type": "module",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:local": "EXECUTION_MODE=local cucumber-js",
+    "test:remote": "EXECUTION_MODE=remote cucumber-js",
+    "test:remote:stage": "EXECUTION_MODE=remote NODE_TLS_REJECT_UNAUTHORIZED=0 cucumber-js",
+    "test:login:remote": "EXECUTION_MODE=remote cucumber-js --tags '@login and @smoke'",
+    "test:login:remote:stage": "EXECUTION_MODE=remote NODE_TLS_REJECT_UNAUTHORIZED=0 cucumber-js --tags '@login and @smoke'",
+    "test:login:all": "cucumber-js --tags @login",
+    "test:login:negative": "cucumber-js --tags '@login and @negative'",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:smoke:remote": "EXECUTION_MODE=remote NODE_TLS_REJECT_UNAUTHORIZED=0 cucumber-js --tags @smoke",
+    "test:parallel": "cucumber-js --parallel 2",
+    "test:debug": "LOG_LEVEL=debug cucumber-js",
+    "clean": "rm -rf test-results screenshots/*.png logs/*.log",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "appium",
+    "cucumber",
+    "bdd",
+    "mobile-testing",
+    "automation",
+    "mobitru"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "appium": "^2.0.0",
+    "chai": "^6.2.0",
+    "dotenv": "^16.6.1",
+    "webdriverio": "^8.46.0",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
