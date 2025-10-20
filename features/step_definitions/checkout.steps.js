@@ -38,15 +38,8 @@ When('I fill the checkout form with following details:', async function(dataTabl
   // Store for verification
   this.checkoutData = formData;
 
-  // Fill shipping address
-  const shippingAddress = {
-    street: formData.address,
-    city: formData.city,
-    zipCode: formData.zipCode,
-    country: formData.state // Using state as country for now
-  };
-
-  await CheckoutPage.fillShippingAddress(shippingAddress);
+  // Fill complete checkout form with all fields
+  await CheckoutPage.fillCompleteCheckoutForm(formData);
 
   logger.info(`✅ Fill required fields: Completed all required fields (First name: ${formData.firstName}, Last name: ${formData.lastName}, Email: ${formData.email}, Address: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zipCode})`);
 });
