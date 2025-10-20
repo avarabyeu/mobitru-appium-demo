@@ -25,6 +25,51 @@ class CheckoutPage extends BasePage {
   }
 
   /**
+   * Fill first name
+   * @param {string} firstName
+   */
+  async fillFirstName(firstName) {
+    try {
+      logger.info(`Filling first name: ${firstName}`);
+      await this.waitAndSetValue(this.locators.firstNameField, firstName);
+      logger.info('First name filled');
+    } catch (error) {
+      logger.error('Failed to fill first name', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Fill last name
+   * @param {string} lastName
+   */
+  async fillLastName(lastName) {
+    try {
+      logger.info(`Filling last name: ${lastName}`);
+      await this.waitAndSetValue(this.locators.lastNameField, lastName);
+      logger.info('Last name filled');
+    } catch (error) {
+      logger.error('Failed to fill last name', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Fill email
+   * @param {string} email
+   */
+  async fillEmail(email) {
+    try {
+      logger.info(`Filling email: ${email}`);
+      await this.waitAndSetValue(this.locators.emailField, email);
+      logger.info('Email filled');
+    } catch (error) {
+      logger.error('Failed to fill email', error);
+      throw error;
+    }
+  }
+
+  /**
    * Fill shipping address
    * @param {Object} address
    */
