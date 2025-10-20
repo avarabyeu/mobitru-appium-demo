@@ -21,6 +21,13 @@ Then('I should see {int} item\\(s) in the cart', async function(expectedCount) {
   logger.info(`✅ Cart verification: Cart contains ${expectedCount} item(s)`);
 });
 
+Then('I should see {int} item in the cart', async function(expectedCount) {
+  logger.info(`Verifying cart has ${expectedCount} item`);
+  const actualCount = await CartPage.getCartItemsCount();
+  expect(actualCount).to.equal(expectedCount);
+  logger.info(`✅ Cart verification: Cart contains ${expectedCount} item`);
+});
+
 Then('I should see items in the cart', async function() {
   const itemsCount = await CartPage.getCartItemsCount();
   expect(itemsCount).to.be.greaterThan(0);
