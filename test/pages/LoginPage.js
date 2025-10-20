@@ -12,7 +12,7 @@ class LoginPage extends BasePage {
       loginField: '//android.widget.EditText[1]',
       passwordField: '//android.widget.EditText[contains(@password,"true") or @password="true"]',
       signInButton: '//android.widget.Button[@text="Sign in"]',
-      errorMessage: '//android.widget.TextView[contains(@text, "error") or contains(@text, "Error")]'
+      errorMessage: '//android.widget.TextView[contains(@text, "Incorrect email or password")]'
     };
   }
 
