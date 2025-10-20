@@ -34,8 +34,17 @@ class ProductPage extends BasePage {
     try {
       logger.info(`Adding product to cart: ${productName}`);
 
-      const addToCartLocator = this.getAddToCartButtonLocator(productName);
-      const addToCartButton = await this.waitForElement(addToCartLocator, 15000);
+      // Try exact match first
+      let addToCartLocator = this.getAddToCartButtonLocator(productName);
+      let addToCartButton;
+      try {
+        addToCartButton = await this.waitForElement(addToCartLocator, 8000);
+      } catch (e) {
+        // Fallback: product title may be truncated. Use first 3 words as anchor.
+        const shortKey = productName.split(' ').slice(0, 3).join(' ');
+        addToCartLocator = `//android.widget.TextView[contains(@text,'${shortKey}')]/following-sibling::android.widget.Button[contains(@text,'Add to cart')]`;
+        addToCartButton = await this.waitForElement(addToCartLocator, 8000);
+      }
 
       await addToCartButton.click();
       await this.driver.pause(1000); // Wait for cart update to start
