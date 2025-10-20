@@ -220,11 +220,22 @@ npm run test:bdd:smoke
 # Run E2E tests only
 npm run test:bdd:e2e
 
+# Run specific JIRA test case
+npm run test:bdd:tags "@epmxyz-9099"
+
 # Run tests by tags
 npm run test:bdd:tags "@login"
 npm run test:bdd:tags "@cart"
 npm run test:bdd:tags "@smoke and @e2e"
 ```
+
+### JIRA Test Cases ✨ NEW
+The framework now includes automated test cases for specific JIRA tickets:
+
+- **EPMXYZ-9099**: Complete shopping flow from login to checkout
+  - Location: `features/epmxyz-9099-shopping-flow.feature`
+  - Tags: `@epmxyz-9099 @e2e @smoke`
+  - Covers: Login → Add Product → Cart → Checkout → Logout → App Close
 
 ### With Different Capabilities
 ```bash
