@@ -38,6 +38,17 @@ When('I fill the checkout form with following details:', async function(dataTabl
   // Store for verification
   this.checkoutData = formData;
 
+  // Fill personal information
+  if (formData.firstName) {
+    await CheckoutPage.fillFirstName(formData.firstName);
+  }
+  if (formData.lastName) {
+    await CheckoutPage.fillLastName(formData.lastName);
+  }
+  if (formData.email) {
+    await CheckoutPage.fillEmail(formData.email);
+  }
+
   // Fill shipping address
   const shippingAddress = {
     street: formData.address,
