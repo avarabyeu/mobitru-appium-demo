@@ -13,8 +13,8 @@ const remoteConfig = getRemoteConfig();
 
 export default {
   // Feature files location
-  // features: ['features/**/*.feature'],
-  features: ['features/**/login.feature'],
+  features: ['features/**/*.feature'],
+  // features: ['features/**/login.feature'],
 
   // Step definitions location
   stepDefinitions: ['features/step_definitions/**/*.js'],
