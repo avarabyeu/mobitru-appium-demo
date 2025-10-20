@@ -26,6 +26,46 @@ class CheckoutPage extends BasePage {
   }
 
   /**
+   * Fill complete checkout form with personal and shipping information
+   * @param {Object} formData - Complete form data
+   */
+  async fillCompleteCheckoutForm(formData) {
+    try {
+      logger.info('Filling complete checkout form');
+
+      // Fill personal information
+      if (formData.firstName) {
+        await this.waitAndSetValue(this.locators.firstNameField, formData.firstName);
+      }
+      if (formData.lastName) {
+        await this.waitAndSetValue(this.locators.lastNameField, formData.lastName);
+      }
+      if (formData.email) {
+        await this.waitAndSetValue(this.locators.emailField, formData.email);
+      }
+
+      // Fill shipping address
+      if (formData.address) {
+        await this.waitAndSetValue(this.locators.shippingAddressField, formData.address);
+      }
+      if (formData.city) {
+        await this.waitAndSetValue(this.locators.cityField, formData.city);
+      }
+      if (formData.state) {
+        await this.waitAndSetValue(this.locators.stateField, formData.state);
+      }
+      if (formData.zipCode) {
+        await this.waitAndSetValue(this.locators.zipCodeField, formData.zipCode);
+      }
+
+      logger.info('Complete checkout form filled successfully');
+    } catch (error) {
+      logger.error('Failed to fill complete checkout form', error);
+      throw error;
+    }
+  }
+
+  /**
    * Fill shipping address
    * @param {Object} address
    */
